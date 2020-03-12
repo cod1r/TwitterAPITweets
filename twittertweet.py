@@ -21,8 +21,5 @@ with open("data.json",'w', encoding='utf8') as f:
     f.write(r.text)
 d = r.json()
 print(len(d['statuses']), len(d))
-for x in d['statuses']:
-    print(x['created_at'])
-    print(x['text'])
 df = DataFrame.from_dict(d['statuses']).transpose()
 df.to_csv("data.csv")
